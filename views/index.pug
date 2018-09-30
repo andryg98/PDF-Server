@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Books PDF
+
+  form(method='post', enctype='multipart/form-data')
+    input(type='file', name='pdfupload')
+    input(type='submit', name='pdfimage', value='Upload PDF')
+    
+  ul
+    each file in files
+      li
+        a(class='button' href=`/public/files/${file}`) #{file}
+
